@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: hello-spring-boot
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.98.54.239:3306/myshop?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+mybatis:
+  # \u5B9E\u4F53\u7C7B\u7684\u5B58\u653E\u8DEF\u5F84
+  type-aliases-package: com.funtl.hello.spring.boot.domain
+  mapper-locations: classpath:mapper/*.xml
+
+server:
+  port: 8088
+  servlet:
+    context-path: /boot
+
+logging:
+  file: ../logs/spring-boot-hello.log
+  level.org.springframework.web: DEBUG
