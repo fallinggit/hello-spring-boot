@@ -33,9 +33,7 @@ public class HelloSpringBootApplicationTests {
     @Test
     public void testSelectAll() {
         List<TbUser> tbUsers = tbUserMapper.selectAll();
-        tbUsers.forEach(tbUser -> {
-            System.out.println(tbUser);
-        });
+        tbUsers.forEach(System.out::println);
     }
 
     @Test
@@ -61,7 +59,7 @@ public class HelloSpringBootApplicationTests {
 
     @Test
     public void testDelete() {
-        tbUserMapper.deleteByPrimaryKey(37L);
+        tbUserMapper.deleteByPrimaryKey(39L);
     }
 
     @Test
